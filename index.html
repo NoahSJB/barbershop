@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbershop AWS Adelsdorf - Traditioneller Herrenfriseur</title>
+    <title>Barber Shop AWS Adelsdorf - Professionelle Haarschnitte & Rasur</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23000' stroke='%23fff' stroke-width='3'/><path d='M25 30 L75 30 L75 70 L25 70 Z' fill='%23fff'/><path d='M30 35 L70 35' stroke='%23000' stroke-width='2'/><path d='M30 45 L70 45' stroke='%23000' stroke-width='2'/><path d='M30 55 L70 55' stroke='%23000' stroke-width='2'/><path d='M30 65 L70 65' stroke='%23000' stroke-width='2'/><circle cx='20' cy='40' r='8' fill='%23fff' stroke='%23000' stroke-width='2'/><circle cx='80' cy='40' r='8' fill='%23fff' stroke='%23000' stroke-width='2'/></svg>" type="image/svg+xml">
     <style>
         * {
             margin: 0;
@@ -11,90 +12,92 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --accent-dark: #2a2a2a;
+            --text-light: #ffffff;
+            --text-gray: #cccccc;
+            --text-muted: #888888;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
             line-height: 1.6;
-            color: #f5f5f5;
-            background-color: #0d1117;
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        .navbar {
+        /* Header */
+        header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(13, 17, 23, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
+            padding: 1rem 0;
             transition: all 0.3s ease;
         }
 
-        .nav-container {
+        nav {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
-            height: 60px;
+            padding: 0 2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #d4af37;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-gold);
             text-decoration: none;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 2rem;
         }
 
-        .nav-menu a {
+        .nav-links a {
+            color: var(--text-light);
             text-decoration: none;
-            color: #f5f5f5;
-            font-weight: 400;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
             position: relative;
         }
 
-        .nav-menu a:hover {
-            color: #d4af37;
+        .nav-links a:hover {
+            color: var(--primary-gold);
         }
 
-        .nav-menu a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: #d4af37;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-gold);
             transition: width 0.3s ease;
         }
 
-        .nav-menu a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(13, 17, 23, 0.8), rgba(21, 32, 43, 0.8)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23161b22" width="1200" height="800"/><path fill="%23d4af37" opacity="0.1" d="M0,400 Q300,200 600,400 T1200,400 V800 H0 Z"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--secondary-dark) 50%, var(--accent-dark) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #f5f5f5;
             position: relative;
             overflow: hidden;
         }
@@ -106,356 +109,250 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="barber-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none"/><path d="M0,10 Q10,5 20,10 T40,10" stroke="rgba(212,175,55,0.1)" stroke-width="1" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23barber-pattern)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="barber" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="%23000"/><circle cx="10" cy="10" r="1" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23barber)"/></svg>');
             opacity: 0.3;
         }
 
         .hero-content {
             max-width: 800px;
-            padding: 0 20px;
+            z-index: 2;
             position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
         }
 
         .hero h1 {
             font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            color: #d4af37;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: slideInUp 1s ease-out;
         }
 
-        .hero p {
+        .hero-subtitle {
             font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            color: #f5f5f5;
+            color: var(--primary-gold);
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-out 0.2s both;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 1s ease-out 0.4s both;
         }
 
         .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #d4af37, #b8941f);
-            color: #0d1117;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-gold), #f4d03f);
+            color: var(--dark-bg);
+            padding: 1rem 2.5rem;
             text-decoration: none;
-            font-weight: 600;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            animation: slideInUp 1s ease-out 0.6s both;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
 
-        .cta-button.secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #f5f5f5;
-            border: 2px solid rgba(212, 175, 55, 0.5);
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(212, 175, 55, 0.2);
-            border-color: #d4af37;
-        }
-
-        /* Sections */
-        .section {
+        /* Services Section */
+        .services {
             padding: 100px 0;
+            background: var(--secondary-dark);
+        }
+
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 0 2rem;
         }
 
-        .section h2 {
-            font-size: 3rem;
-            font-weight: 700;
+        .section-title {
             text-align: center;
-            margin-bottom: 60px;
-            color: #d4af37;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            position: relative;
         }
 
-        /* Services Grid */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-gold);
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            gap: 3rem;
+            margin-top: 4rem;
         }
 
         .service-card {
-            background: linear-gradient(135deg, #161b22, #21262d);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            background: var(--accent-dark);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(212, 175, 55, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #d4af37, #b8941f);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
-            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border-color: var(--primary-gold);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #d4af37, #b8941f);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: #0d1117;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
         }
 
         .service-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #f5f5f5;
+            margin-bottom: 1rem;
+            color: var(--text-light);
         }
 
         .service-card p {
-            color: #8b949e;
+            color: var(--text-gray);
             line-height: 1.6;
-        }
-
-        .price {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #d4af37;
-            margin-top: 15px;
         }
 
         /* About Section */
         .about {
-            background: linear-gradient(135deg, #0d1117, #161b22);
+            padding: 100px 0;
+            background: var(--dark-bg);
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 4rem;
             align-items: center;
         }
 
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #d4af37;
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
         }
 
         .about-text p {
-            color: #8b949e;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            margin-bottom: 20px;
-            line-height: 1.8;
         }
 
         .about-image {
-            text-align: center;
-            position: relative;
-        }
-
-        .barber-image {
-            width: 300px;
+            background: var(--accent-dark);
             height: 400px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #d4af37, #b8941f);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0d1117;
-            font-size: 4rem;
-            margin: 0 auto;
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .barber-image::before {
-            content: '✂️';
-            position: absolute;
-            font-size: 6rem;
-            opacity: 0.3;
-        }
-
-        /* Location Section */
-        .location {
-            background: #161b22;
-        }
-
-        .location-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .location-info {
-            background: linear-gradient(135deg, #21262d, #30363d);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .location-info h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #d4af37;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            color: #f5f5f5;
-            font-size: 1.1rem;
-        }
-
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #d4af37, #b8941f);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0d1117;
-            font-size: 1.2rem;
-        }
-
-        .map-container {
-            height: 400px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            filter: invert(90%) hue-rotate(180deg);
-        }
-
-        /* Phone Button (Mobile) */
-        .phone-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #d4af37, #b8941f);
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            color: #0d1117;
-            font-size: 1.5rem;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-            z-index: 1000;
-            animation: pulse 2s infinite;
-        }
-
-        @media (max-width: 768px) {
-            .phone-button {
-                display: flex;
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
-            }
-        }
-
-        /* Opening Hours */
-        .hours-table {
-            background: linear-gradient(135deg, #21262d, #30363d);
             border-radius: 15px;
-            padding: 30px;
-            margin-top: 30px;
-        }
-
-        .hours-row {
             display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-gold);
         }
 
-        .hours-row:last-child {
-            border-bottom: none;
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--secondary-dark);
         }
 
-        .day {
-            font-weight: 600;
-            color: #f5f5f5;
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .time {
-            color: #d4af37;
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            background: var(--accent-dark);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item p {
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        .phone-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .phone-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
 
         /* Footer */
-        .footer {
-            background: #0d1117;
-            color: #8b949e;
+        footer {
+            background: var(--dark-bg);
+            padding: 2rem 0;
             text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-top: 1px solid var(--accent-dark);
+        }
+
+        footer p {
+            color: var(--text-muted);
         }
 
         /* Animations */
-        @keyframes fadeInUp {
+        @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -463,20 +360,9 @@
             }
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .nav-menu {
+            .nav-links {
                 display: none;
             }
 
@@ -484,217 +370,176 @@
                 font-size: 2.5rem;
             }
 
-            .hero p {
+            .hero-subtitle {
                 font-size: 1.2rem;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+            .hero-description {
+                font-size: 1rem;
             }
 
-            .section h2 {
+            .section-title {
                 font-size: 2rem;
             }
 
-            .about-content,
-            .location-content {
+            .services-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 2rem;
             }
 
-            .barber-image {
-                width: 250px;
-                height: 300px;
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 250px;
+            }
+
+            nav {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
             }
         }
 
-        /* Barbershop specific styling */
-        .specialty {
-            background: linear-gradient(45deg, #d4af37, #b8941f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">Barbershop AWS</a>
-            <ul class="nav-menu">
+    <header>
+        <nav>
+            <a href="#home" class="logo">✂️ AWS Barbershop</a>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">Über uns</a></li>
-                <li><a href="#location">Standort</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Barbershop AWS</h1>
-            <p>Traditionelle Herrenpflege in <span class="specialty">Adelsdorf</span></p>
-            <div class="hero-buttons">
-                <a href="tel:+4991957654321" class="cta-button">
-                    📞 Jetzt anrufen
-                </a>
-                <a href="#services" class="cta-button secondary">
-                    Unsere Services
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <h2>Unsere Services</h2>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-icon">✂️</div>
-                <h3>Klassischer Haarschnitt</h3>
-                <p>Präzise Schnitte nach traditioneller Handwerkskunst. Von klassisch bis modern - wir bringen Ihren Stil zur Perfektion.</p>
-                <div class="price">ab 25€</div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">🪒</div>
-                <h3>Traditionelle Rasur</h3>
-                <p>Entspannende Nassrasur mit heißen Handtüchern und hochwertigen Produkten für das ultimative Barbershop-Erlebnis.</p>
-                <div class="price">ab 20€</div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">🧔</div>
-                <h3>Bartpflege & Styling</h3>
-                <p>Professionelle Bartformung, Trimmen und Pflege. Wir bringen Ihren Bart in die perfekte Form.</p>
-                <div class="price">ab 15€</div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">👨</div>
-                <h3>Komplettpaket</h3>
-                <p>Haarschnitt, Rasur und Bartpflege in einem. Das volle Barbershop-Erlebnis für den perfekten Look.</p>
-                <div class="price">ab 45€</div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">💆</div>
-                <h3>Gesichtspflege</h3>
-                <p>Entspannende Gesichtsbehandlung mit hochwertigen Produkten für gepflegte Männerhaut.</p>
-                <div class="price">ab 30€</div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">🎩</div>
-                <h3>Vintage Styling</h3>
-                <p>Klassische Frisuren der 20er bis 50er Jahre. Perfekt für besondere Anlässe oder den authentischen Vintage-Look.</p>
-                <div class="price">ab 35€</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <h2>Über uns</h2>
-        <div class="about-content">
-            <div class="about-text fade-in">
-                <h3>Tradition trifft Moderne</h3>
-                <p>Im Herzen von Adelsdorf bieten wir seit Jahren erstklassige Herrenpflege in entspannter Atmosphäre. Unser erfahrenes Team verbindet traditionelle Barbershop-Kunst mit modernen Techniken.</p>
-                <p>Bei uns steht nicht nur das perfekte Ergebnis im Vordergrund, sondern auch das Erlebnis. Lehnen Sie sich zurück und genießen Sie die Auszeit vom Alltag in unserem stilvollen Barbershop.</p>
-                <p>Qualität, Präzision und Kundenzufriedenheit sind unsere obersten Prioritäten. Jeder Kunde verlässt unseren Shop mit einem Lächeln und dem perfekten Look.</p>
-            </div>
-            <div class="about-image fade-in">
-                <div class="barber-image"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location" class="section location">
-        <h2>Unser Standort</h2>
-        <div class="location-content">
-            <div class="location-info fade-in">
-                <h3>Besuchen Sie uns</h3>
-                <div class="info-item">
-                    <div class="info-icon">📍</div>
-                    <div>
-                        <strong>Adresse:</strong><br>
-                        Hauptstraße 123<br>
-                        91325 Adelsdorf
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">📞</div>
-                    <div>
-                        <strong>Telefon:</strong><br>
-                        <a href="tel:+4991957654321" style="color: #d4af37; text-decoration: none;">
-                            +49 9195 765 4321
-                        </a>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">🚗</div>
-                    <div>
-                        <strong>Parkplätze:</strong><br>
-                        Kostenlose Parkplätze<br>
-                        direkt vor dem Shop
-                    </div>
-                </div>
-
-                <div class="hours-table">
-                    <h4 style="color: #d4af37; margin-bottom: 20px; text-align: center;">Öffnungszeiten</h4>
-                    <div class="hours-row">
-                        <span class="day">Montag - Freitag</span>
-                        <span class="time">09:00 - 18:00</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="day">Samstag</span>
-                        <span class="time">08:00 - 16:00</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="day">Sonntag</span>
-                        <span class="time">Geschlossen</span>
-                    </div>
-                </div>
-            </div>
-            <div class="map-container fade-in">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.1597634454285!2d10.894232615723813!3d49.70345797937566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a21d2f69a9c49b%3A0x123456789abcdef0!2sMarktplatz+1%2C+91325+Adelsdorf!5e0!3m2!1sde!2sde!4v1234567890123"
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2>Terminvereinbarung</h2>
-        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <p style="font-size: 1.2rem; margin-bottom: 30px; color: #8b949e;">
-                Termine vergeben wir ausschließlich telefonisch. Rufen Sie uns an und wir finden gemeinsam den perfekten Termin für Sie.
+            <h1>Barber Shop AWS</h1>
+            <p class="hero-subtitle">Adelsdorf</p>
+            <p class="hero-description">
+                Bei uns bekommst du mehr als nur einen Haarschnitt – wir sorgen dafür, dass du dich rundum wohlfühlst. 
+                In lockerer Atmosphäre und mit echter Leidenschaft fürs Handwerk.
             </p>
-            <a href="tel:+4991957654321" class="cta-button" style="font-size: 1.2rem; padding: 20px 40px;">
-                📞 +49 9195 765 4321
-            </a>
-            <p style="margin-top: 30px; color: #8b949e;">
-                <strong>Bitte beachten Sie:</strong><br>
-                Online-Terminbuchung ist nicht möglich.<br>
-                Termine nur nach telefonischer Vereinbarung.
-            </p>
+            <a href="#contact" class="cta-button">Jetzt Termin buchen</a>
+        </div>
+        <div class="scroll-indicator">
+            <div style="color: var(--primary-gold); font-size: 2rem;">↓</div>
         </div>
     </section>
 
-    <!-- Mobile Phone Button -->
-    <a href="tel:+4991957654321" class="phone-button">
-        📞
-    </a>
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Unsere Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Präzise Haarschnitte</h3>
+                    <p>Unsere Barbiere sind spezialisiert auf präzise Haarschnitte für jeden Stil. Ob klassisch oder modern – wir finden den perfekten Look für dich.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪒</div>
+                    <h3>Klassische Rasur</h3>
+                    <p>Erlebe die Kunst der klassischen Rasur in entspannter Atmosphäre. Mit traditionellen Techniken und hochwertigen Produkten.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Kreative Styles</h3>
+                    <p>Lass dich von kreativen Styles und trendigen Techniken inspirieren. Wir setzen deine Wünsche mit Leidenschaft um.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Barbershop AWS Adelsdorf. Alle Rechte vorbehalten.</p>
-        <p style="margin-top: 10px;">Hauptstraße 123 • 91325 Adelsdorf • Tel: +49 9195 765 4321</p>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Willkommen im Barber Shop AWS</h2>
+                    <p>
+                        Bei uns steht nicht nur der perfekte Haarschnitt im Vordergrund, sondern dein gesamtes Wohlbefinden. 
+                        Wir nehmen uns Zeit für deinen Look und sorgen dafür, dass du dich rundum wohlfühlst.
+                    </p>
+                    <p>
+                        Ob klassisch oder modern, präzise Schnitte oder entspannte Rasur – in lockerer Atmosphäre und 
+                        mit echter Leidenschaft fürs Handwerk erschaffen wir deinen individuellen Style.
+                    </p>
+                    <p>
+                        Schau einfach mal vorbei – wir freuen uns auf dich!
+                    </p>
+                </div>
+                <div class="about-image">
+                    💈
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Termin vereinbaren</h2>
+                <p>Buche direkt telefonisch einen Termin bei uns! Wir sind für dich da und freuen uns auf deinen Besuch.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Adresse</h3>
+                        <p>Marktplatz 1<br>91325 Adelsdorf</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Telefon</h3>
+                        <p>091955074412<br>Jetzt anrufen</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>⏰ Öffnungszeiten</h3>
+                        <p>Montag - Samstag<br>10:00 - 19:00 Uhr</p>
+                    </div>
+                </div>
+
+                <a href="tel:+49091955074412" class="phone-button">📞 Jetzt anrufen</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                    Klicke auf den Button, um uns direkt anzurufen
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Barber Shop AWS Adelsdorf. Alle Rechte vorbehalten.</p>
+        </div>
     </footer>
 
     <script>
@@ -712,49 +557,37 @@
             });
         });
 
-        // Navbar transparency on scroll
+        // Header background on scroll
         window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(13, 17, 23, 0.95)';
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
             } else {
-                navbar.style.background = 'rgba(13, 17, 23, 0.8)';
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
             }
         });
 
-        // Fade in animation on scroll
+        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(el => {
+        // Observe service cards and other elements
+        document.querySelectorAll('.service-card, .contact-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
             observer.observe(el);
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && scrolled < hero.offsetHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        });
-
-        // Phone button functionality
-        document.querySelector('.phone-button').addEventListener('click', function(e) {
-            // Add vibration on mobile devices if supported
-            if (navigator.vibrate) {
-                navigator.vibrate(100);
-            }
         });
     </script>
 </body>
