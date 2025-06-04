@@ -26,45 +26,7 @@
             padding: 0 20px;
         }
 
-        header {
-            background: linear-gradient(45deg, #1a1a1a, #2a2a2a, #1a1a1a);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(180, 120, 60, 0.2);
-        }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #b4783c, #d4af37, #b4783c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-info {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #d4af37;
-            font-size: 0.9rem;
-        }
 
         .hero {
             background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 50%, #2d2d2d 100%);
@@ -126,7 +88,6 @@
             box-shadow: 0 10px 25px rgba(180, 120, 60, 0.4);
         }
 
-        /* Services Section */
         .services {
             padding: 80px 0;
             background: linear-gradient(135deg, #1a1a1a 0%, #262626 50%, #1a1a1a 100%);
@@ -181,7 +142,6 @@
             line-height: 1.6;
         }
 
-        /* About Section */
         .about {
             padding: 80px 0;
             background: linear-gradient(135deg, #262626 0%, #1a1a1a 50%, #262626 100%);
@@ -255,7 +215,6 @@
             box-shadow: 0 8px 20px rgba(180, 120, 60, 0.4);
         }
 
-        /* Google Maps */
         .map-container {
             height: 400px;
             border-radius: 20px;
@@ -270,7 +229,6 @@
             filter: grayscale(20%) invert(92%) contrast(83%);
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(45deg, #1a1a1a, #0f0f0f);
             padding: 40px 0;
@@ -283,16 +241,7 @@
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
 
-            .nav-info {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
 
             .hero {
                 padding: 60px 0;
@@ -343,7 +292,6 @@
             }
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -365,23 +313,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">Barbershop Adelsdorf</div>
-                <div class="nav-info">
-                    <div class="contact-item">
-                        <span>📞</span>
-                        <span>091955074412</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>🕒</span>
-                        <span>Mo-Sa 10:00-19:00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+
 
     <section class="hero">
         <div class="container">
@@ -479,15 +411,8 @@
         });
 
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(45deg, rgba(26,26,26,0.95), rgba(42,42,42,0.95), rgba(26,26,26,0.95))';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(45deg, #1a1a1a, #2a2a2a, #1a1a1a)';
-                header.style.backdropFilter = 'none';
-            }
         });
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
