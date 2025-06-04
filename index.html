@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barber Shop AWS Adelsdorf - Professionelle Haarschnitte & Rasur</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23000' stroke='%23fff' stroke-width='3'/><path d='M25 30 L75 30 L75 70 L25 70 Z' fill='%23fff'/><path d='M30 35 L70 35' stroke='%23000' stroke-width='2'/><path d='M30 45 L70 45' stroke='%23000' stroke-width='2'/><path d='M30 55 L70 55' stroke='%23000' stroke-width='2'/><path d='M30 65 L70 65' stroke='%23000' stroke-width='2'/><circle cx='20' cy='40' r='8' fill='%23fff' stroke='%23000' stroke-width='2'/><circle cx='80' cy='40' r='8' fill='%23fff' stroke='%23000' stroke-width='2'/></svg>" type="image/svg+xml">
+    <title>Barbershop Adelsdorf - Premium Haarschnitte & Rasur</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='barberpole' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4af37'/%3E%3Cstop offset='50%25' style='stop-color:%23b4783c'/%3E%3Cstop offset='100%25' style='stop-color:%23d4af37'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%231a1a1a'/%3E%3Cg transform='translate(20,20)'%3E%3Crect x='25' y='10' width='10' height='50' rx='5' fill='url(%23barberpole)'/%3E%3Crect x='15' y='5' width='30' height='8' rx='4' fill='%23d4af37'/%3E%3Crect x='15' y='57' width='30' height='8' rx='4' fill='%23d4af37'/%3E%3Cpath d='M5 25 L20 20 L20 30 L20 35 L20 45 L5 40 Z' fill='%23b4783c'/%3E%3Cpath d='M40 20 L55 25 L55 40 L40 45 L40 35 L40 30 Z' fill='%23b4783c'/%3E%3C/g%3E%3C/svg%3E">
     <style>
         * {
             margin: 0;
@@ -12,91 +12,63 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-gold: #d4af37;
-            --dark-bg: #0a0a0a;
-            --secondary-dark: #1a1a1a;
-            --accent-dark: #2a2a2a;
-            --text-light: #ffffff;
-            --text-gray: #cccccc;
-            --text-muted: #888888;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
             line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            color: #e0e0e0;
             overflow-x: hidden;
         }
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        nav {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a, #1a1a1a);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(180, 120, 60, 0.2);
+        }
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
-            color: var(--primary-gold);
-            text-decoration: none;
+            background: linear-gradient(45deg, #b4783c, #d4af37, #b4783c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .nav-links {
+        .nav-info {
             display: flex;
-            list-style: none;
-            gap: 2rem;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-gold);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--secondary-dark) 50%, var(--accent-dark) 100%);
+        .contact-item {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            color: #d4af37;
+            font-size: 0.9rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 50%, #2d2d2d 100%);
+            padding: 80px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -109,250 +81,273 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="barber" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="%23000"/><circle cx="10" cy="10" r="1" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23barber)"/></svg>');
-            opacity: 0.3;
+            background: radial-gradient(circle at center, rgba(180, 120, 60, 0.1) 0%, transparent 70%);
         }
 
         .hero-content {
-            max-width: 800px;
-            z-index: 2;
             position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: slideInUp 1s ease-out;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #d4af37, #b4783c, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--primary-gold);
-            margin-bottom: 2rem;
-            animation: slideInUp 1s ease-out 0.2s both;
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 3rem;
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 30px;
+            color: #c0c0c0;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            animation: slideInUp 1s ease-out 0.4s both;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, var(--primary-gold), #f4d03f);
-            color: var(--dark-bg);
-            padding: 1rem 2.5rem;
-            text-decoration: none;
+            background: linear-gradient(45deg, #b4783c, #d4af37);
+            color: #1a1a1a;
+            padding: 15px 30px;
             border-radius: 50px;
+            text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            animation: slideInUp 1s ease-out 0.6s both;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(180, 120, 60, 0.4);
         }
 
         /* Services Section */
         .services {
-            padding: 100px 0;
-            background: var(--secondary-dark);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #262626 50%, #1a1a1a 100%);
         }
 
         .section-title {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            color: var(--text-light);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--primary-gold);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, #d4af37, #b4783c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            gap: 30px;
+            margin-top: 50px;
         }
 
         .service-card {
-            background: var(--accent-dark);
-            padding: 2.5rem;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(180, 120, 60, 0.2);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            border-color: var(--primary-gold);
+            box-shadow: 0 20px 40px rgba(180, 120, 60, 0.2);
+            border-color: rgba(180, 120, 60, 0.5);
         }
 
         .service-icon {
             font-size: 3rem;
-            color: var(--primary-gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
+            color: #d4af37;
         }
 
         .service-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-light);
+            margin-bottom: 15px;
+            color: #d4af37;
         }
 
         .service-card p {
-            color: var(--text-gray);
+            color: #b0b0b0;
             line-height: 1.6;
         }
 
         /* About Section */
         .about {
-            padding: 100px 0;
-            background: var(--dark-bg);
+            padding: 80px 0;
+            background: linear-gradient(135deg, #262626 0%, #1a1a1a 50%, #262626 100%);
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-light);
-        }
-
-        .about-text p {
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .about-image {
-            background: var(--accent-dark);
-            height: 400px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--primary-gold);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: var(--secondary-dark);
-        }
-
-        .contact-content {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-light);
+        .about p {
+            font-size: 1.2rem;
+            color: #c0c0c0;
+            margin-bottom: 30px;
+            line-height: 1.8;
         }
 
-        .contact p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 3rem;
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
         }
 
         .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(180, 120, 60, 0.2);
         }
 
-        .contact-item {
-            background: var(--accent-dark);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
+        .contact-info h3 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
         }
 
-        .contact-item h3 {
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #c0c0c0;
         }
 
-        .contact-item p {
-            color: var(--text-gray);
-            margin: 0;
+        .contact-detail strong {
+            color: #d4af37;
+            margin-right: 10px;
+            min-width: 80px;
         }
 
         .phone-button {
             display: inline-block;
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            color: white;
-            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, #b4783c, #d4af37);
+            color: #1a1a1a;
+            padding: 12px 25px;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
+            margin-top: 20px;
             transition: all 0.3s ease;
-            margin-top: 2rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .phone-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(180, 120, 60, 0.4);
+        }
+
+        /* Google Maps */
+        .map-container {
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(180, 120, 60, 0.3);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(20%) invert(92%) contrast(83%);
         }
 
         /* Footer */
         footer {
-            background: var(--dark-bg);
-            padding: 2rem 0;
+            background: linear-gradient(45deg, #1a1a1a, #0f0f0f);
+            padding: 40px 0;
             text-align: center;
-            border-top: 1px solid var(--accent-dark);
+            border-top: 1px solid rgba(180, 120, 60, 0.2);
         }
 
         footer p {
-            color: var(--text-muted);
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-info {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .services, .about, .contact {
+                padding: 60px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+
+            .contact-info {
+                padding: 30px 20px;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .services, .about, .contact {
+                padding: 40px 0;
+            }
+
+            .service-card, .contact-info {
+                padding: 25px 15px;
+            }
         }
 
         /* Animations */
-        @keyframes slideInUp {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -360,107 +355,45 @@
             }
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .about-image {
-                height: 250px;
-            }
-
-            nav {
-                padding: 0 1rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
+        .service-card, .contact-info {
+            animation: fadeInUp 0.6s ease-out;
         }
 
-        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="#home" class="logo">✂️ AWS Barbershop</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">Über uns</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Barbershop Adelsdorf</div>
+                <div class="nav-info">
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span>091955074412</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🕒</span>
+                        <span>Mo-Sa 10:00-19:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Barber Shop AWS</h1>
-            <p class="hero-subtitle">Adelsdorf</p>
-            <p class="hero-description">
-                Bei uns bekommst du mehr als nur einen Haarschnitt – wir sorgen dafür, dass du dich rundum wohlfühlst. 
-                In lockerer Atmosphäre und mit echter Leidenschaft fürs Handwerk.
-            </p>
-            <a href="#contact" class="cta-button">Jetzt Termin buchen</a>
-        </div>
-        <div class="scroll-indicator">
-            <div style="color: var(--primary-gold); font-size: 2rem;">↓</div>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Barbershop Adelsdorf</h1>
+                <p>Bei uns bekommst du mehr als nur einen Haarschnitt – wir sorgen dafür, dass du dich rundum wohlfühlst. In lockerer Atmosphäre und mit echter Leidenschaft fürs Handwerk.</p>
+                <a href="tel:091955074412" class="cta-button">Jetzt Termin vereinbaren</a>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section class="services">
         <div class="container">
             <h2 class="section-title">Unsere Services</h2>
             <div class="services-grid">
@@ -476,104 +409,91 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">✨</div>
-                    <h3>Kreative Styles</h3>
+                    <h3>Styling & Trends</h3>
                     <p>Lass dich von kreativen Styles und trendigen Techniken inspirieren. Wir setzen deine Wünsche mit Leidenschaft um.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <section class="about">
         <div class="container">
+            <h2 class="section-title">Über uns</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <h2>Willkommen im Barber Shop AWS</h2>
-                    <p>
-                        Bei uns steht nicht nur der perfekte Haarschnitt im Vordergrund, sondern dein gesamtes Wohlbefinden. 
-                        Wir nehmen uns Zeit für deinen Look und sorgen dafür, dass du dich rundum wohlfühlst.
-                    </p>
-                    <p>
-                        Ob klassisch oder modern, präzise Schnitte oder entspannte Rasur – in lockerer Atmosphäre und 
-                        mit echter Leidenschaft fürs Handwerk erschaffen wir deinen individuellen Style.
-                    </p>
-                    <p>
-                        Schau einfach mal vorbei – wir freuen uns auf dich!
-                    </p>
-                </div>
-                <div class="about-image">
-                    💈
-                </div>
+                <p>Bei uns steht nicht nur der perfekte Haarschnitt im Vordergrund, sondern dein gesamtes Wohlbefinden. Wir nehmen uns Zeit für deinen Look und sorgen dafür, dass du dich rundum wohlfühlst.</p>
+                <p>Ob klassisch oder modern, präzise Schnitte oder entspannte Rasur – in lockerer Atmosphäre und mit echter Leidenschaft fürs Handwerk erschaffen wir deinen individuellen Style.</p>
+                <p><strong>Schau einfach mal vorbei – wir freuen uns auf dich!</strong></p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section class="contact">
         <div class="container">
-            <div class="contact-content">
-                <h2>Termin vereinbaren</h2>
-                <p>Buche direkt telefonisch einen Termin bei uns! Wir sind für dich da und freuen uns auf deinen Besuch.</p>
-                
+            <h2 class="section-title">Kontakt & Anfahrt</h2>
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>📍 Adresse</h3>
-                        <p>Marktplatz 1<br>91325 Adelsdorf</p>
+                    <h3>Kontakt</h3>
+                    <div class="contact-detail">
+                        <strong>Adresse:</strong>
+                        <span>Marktplatz 1, 91325 Adelsdorf</span>
                     </div>
-                    <div class="contact-item">
-                        <h3>📞 Telefon</h3>
-                        <p>091955074412<br>Jetzt anrufen</p>
+                    <div class="contact-detail">
+                        <strong>Telefon:</strong>
+                        <span>091955074412</span>
                     </div>
-                    <div class="contact-item">
-                        <h3>⏰ Öffnungszeiten</h3>
-                        <p>Montag - Samstag<br>10:00 - 19:00 Uhr</p>
+                    <div class="contact-detail">
+                        <strong>Öffnungszeiten:</strong>
+                        <span>Montag - Samstag<br>10:00 - 19:00 Uhr</span>
                     </div>
+                    <a href="tel:091955074412" class="phone-button">📞 Jetzt anrufen</a>
+                    <p style="margin-top: 20px; color: #888; font-size: 0.9rem;">
+                        Buche direkt telefonisch einen Termin bei uns! Wir sind für dich da und freuen uns auf deinen Besuch.
+                    </p>
                 </div>
-
-                <a href="tel:+49091955074412" class="phone-button">📞 Jetzt anrufen</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
-                    Klicke auf den Button, um uns direkt anzurufen
-                </p>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2570.8264739234946!2d10.879584776942098!3d49.70857937139473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a20b8b3b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sMarktplatz%201%2C%2091325%20Adelsdorf%2C%20Germany!5e0!3m2!1sen!2sde!4v1735989600000!5m2!1sen!2sde"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Barber Shop AWS Adelsdorf. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 Barbershop Adelsdorf. Alle Rechte vorbehalten. Website by Noah Blesch</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(10, 10, 10, 0.98)';
+                header.style.background = 'linear-gradient(45deg, rgba(26,26,26,0.95), rgba(42,42,42,0.95), rgba(26,26,26,0.95))';
+                header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.background = 'linear-gradient(45deg, #1a1a1a, #2a2a2a, #1a1a1a)';
+                header.style.backdropFilter = 'none';
             }
         });
-
-        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -582,11 +502,10 @@
             });
         }, observerOptions);
 
-        // Observe service cards and other elements
-        document.querySelectorAll('.service-card, .contact-item').forEach(el => {
+        document.querySelectorAll('.service-card, .contact-info').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
             observer.observe(el);
         });
     </script>
